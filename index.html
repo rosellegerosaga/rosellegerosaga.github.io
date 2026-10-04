@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roselle Rivera Gerosaga | AI Automation Portfolio</title>
+<meta name="description" content="Portfolio of Roselle Rivera Gerosaga: AI automation builder with a customer-service background.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFF9F5;
+    --blue: #E3F0FF;
+    --lavender: #CDB4DB;
+    --pink: #FFC8DD;
+    --mint: #C8EEDD;
+    --plum: #3D3552;
+    --plum-soft: #6B6280;
+    --head: "Bricolage Grotesque", "Trebuchet MS", Arial, sans-serif;
+    --body: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--plum);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.65;
+  }
+  h1, h2, h3 { font-family: var(--head); line-height: 1.15; margin: 0 0 .5em; }
+  h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 700; }
+  h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); font-weight: 700; }
+  h3 { font-size: 1.25rem; font-weight: 700; }
+  p { margin: 0 0 1em; max-width: 62ch; }
+  a { color: var(--plum); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1000px, 100% - 2.5rem); margin-inline: auto; }
+  section { padding: 4.5rem 0; }
+
+  /* Top bar */
+  header.top { padding: 1.1rem 0; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .brand { font-family: var(--head); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 1.4rem; margin: 0; padding: 0; flex-wrap: wrap; }
+  nav a { text-decoration: none; font-weight: 600; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+  nav a:hover { border-color: var(--lavender); }
+
+  /* Buttons */
+  .btn { display: inline-block; padding: .8rem 1.5rem; border-radius: 999px; font-weight: 700; text-decoration: none; font-family: var(--body); }
+  .btn-main { background: var(--plum); color: #fff; }
+  .btn-main:hover { background: #2c2640; }
+  .btn-soft { background: var(--pink); color: var(--plum); }
+  .btn-soft:hover { background: #ffb5d0; }
+  .btn-row { display: flex; gap: .9rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+  /* Hero */
+  .hero { padding-top: 2rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: center; }
+  .hero .lead { font-size: 1.2rem; color: var(--plum-soft); }
+  .photo-box { justify-self: center; width: min(280px, 70vw); aspect-ratio: 1; border-radius: 50%; background: var(--lavender); border: 8px solid var(--blue); overflow: hidden; display: grid; place-items: center; box-shadow: 14px 14px 0 var(--pink); }
+  .photo-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-box span { font-family: var(--head); font-size: 4rem; font-weight: 700; }
+
+  /* Signature element: the automation flow */
+  .flow { margin-top: 3.5rem; background: var(--blue); border-radius: 28px; padding: 2rem 1.5rem; }
+  .flow p.cap { margin: 0 0 1.4rem; font-weight: 600; max-width: none; }
+  .flow-line { display: flex; align-items: center; justify-content: center; gap: .6rem; flex-wrap: wrap; }
+  .node { background: #fff; border-radius: 22px; padding: 1rem 1.3rem; text-align: center; min-width: 150px; border: 3px solid transparent; }
+  .node b { display: block; font-family: var(--head); font-size: 1.05rem; }
+  .node small { color: var(--plum-soft); font-size: .9rem; }
+  .n1 { border-color: var(--mint); }
+  .n2 { border-color: var(--pink); }
+  .n3 { border-color: var(--lavender); }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--lavender); display: block; }
+  @media (max-width: 760px) { .dots { transform: rotate(90deg); margin: .6rem 0; } .flow-line { flex-direction: column; } }
+
+  /* About */
+  #about { background: var(--mint); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .facts { list-style: none; padding: 0; margin: 0; }
+  .facts li { padding: .8rem 0; border-bottom: 2px solid rgba(61,53,82,.15); }
+  .facts li:last-child { border-bottom: 0; }
+  .facts b { display: block; }
+
+  /* Project */
+  .case-head { max-width: 62ch; margin-bottom: 2rem; }
+  .shot { background: var(--blue); border-radius: 22px; padding: 1rem; margin: 0 0 2rem; }
+  .shot img { width: 100%; border-radius: 12px; display: block; background: #fff; }
+  .shot figcaption { padding: .8rem .4rem .2rem; color: var(--plum-soft); font-size: .95rem; }
+  .steps { list-style: none; counter-reset: s; padding: 0; margin: 0 0 2rem; display: grid; gap: 1rem; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 2.6rem 1fr; gap: 1rem; align-items: start; }
+  .steps li::before { content: counter(s); background: var(--lavender); width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; font-family: var(--head); font-weight: 700; }
+  .result { background: var(--pink); border-radius: 22px; padding: 1.5rem 1.7rem; }
+  .result p:last-child { margin-bottom: 0; }
+
+  /* Services */
+  #services { background: var(--blue); }
+  .svc { display: grid; gap: 1.2rem; margin-top: 1.5rem; }
+  .svc div { background: #fff; border-radius: 18px; padding: 1.2rem 1.5rem; border-left: 14px solid var(--lavender); }
+  .svc div:nth-child(2) { border-left-color: var(--pink); }
+  .svc div:nth-child(3) { border-left-color: var(--mint); }
+  .svc p { margin: 0; }
+
+  /* Skills + experience */
+  .pills { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: .7rem; }
+  .pills li { background: var(--pink); padding: .45rem 1.1rem; border-radius: 999px; font-weight: 600; }
+  .pills li:nth-child(3n+2) { background: var(--mint); }
+  .pills li:nth-child(3n) { background: var(--lavender); }
+  .exp { margin-top: 3rem; }
+  .exp-item { border-left: 4px solid var(--lavender); padding-left: 1.2rem; margin-bottom: 1.6rem; }
+  .exp-item p { margin: 0; }
+
+  /* Contact */
+  #contact { background: var(--lavender); }
+  #contact .btn-main { background: var(--plum); }
+  footer { padding: 1.8rem 0; text-align: center; font-size: .95rem; color: var(--plum-soft); }
+
+  @media (max-width: 760px) {
+    .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .photo-box { order: -1; }
+    section { padding: 3.2rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Roselle Gerosaga</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>I build simple automations that save small businesses time.</h1>
+          <p class="lead">Hi, I'm Roselle Rivera Gerosaga, an AI automation builder with a customer-service background. I turn repetitive tasks, like replying to every new inquiry, into workflows that run on their own.</p>
+          <div class="btn-row">
+            <a class="btn btn-main" href="#project">View my project</a>
+            <a class="btn btn-soft" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <!-- PHOTO: upload your picture to the repository as photo.png -->
+        <div class="photo-box">
+          <img src="photo.png" alt="Portrait of Roselle Rivera Gerosaga" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span style="display:none" aria-hidden="true">RG</span>
+        </div>
+      </div>
+
+      <div class="flow" aria-label="Diagram of my first automation">
+        <p class="cap">My first automation, in three steps:</p>
+        <div class="flow-line">
+          <div class="node n1"><b>New inquiry</b><small>lands in Google Sheets</small></div>
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="node n2"><b>Customer reply</b><small>sent automatically</small></div>
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="node n3"><b>Owner alert</b><small>sent automatically</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>About me</h2>
+        <!-- EDIT: rewrite these lines in your own voice -->
+        <p>I work as an AI Generative Specialist, and I'm now building my skills in automation so I can help businesses run with fewer manual tasks.</p>
+        <p>My customer-service experience taught me what customers need: a fast, friendly answer. I design automations with that in mind, so people are never left waiting.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Currently</b>AI Generative Specialist</li>
+        <li><b>Learning</b>Make.com automation, Google Workspace tools</li>
+        <li><b>Looking for</b>Remote roles in AI and automation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section id="project">
+    <div class="wrap">
+      <div class="case-head">
+        <h2>Project: Rose's Catering inquiry handler</h2>
+        <p>A practice project I built for a fictional catering business. It shows how one automation can answer customers and alert the owner without anyone lifting a finger.</p>
+      </div>
+
+      <h3>The problem</h3>
+      <p>A caterer who gets inquiries through an online form has to notice each one, reply, and keep track. Slow replies lose customers.</p>
+
+      <h3>How it works</h3>
+      <ol class="steps">
+        <li><p>A customer fills in the inquiry form, and the answers are saved as a new row in a Google Sheet.</p></li>
+        <li><p>Make.com checks the sheet every 15 minutes and spots the new row.</p></li>
+        <li><p>Gmail sends the customer an automatic reply confirming their inquiry.</p></li>
+        <li><p>Gmail sends the business owner an alert with the customer's details.</p></li>
+      </ol>
+
+      <!-- SCREENSHOT: upload your Make screenshot as lead-capture.png -->
+      <figure class="shot">
+        <img src="lead-capture.png" alt="Make.com scenario showing Google Sheets Watch New Rows connected to two Gmail Send an Email steps" onerror="this.closest('figure').style.display='none';">
+        <figcaption>The scenario in Make.com, running on a schedule with successful runs.</figcaption>
+      </figure>
+
+      <h3>Tools used</h3>
+      <ul class="pills">
+        <li>Make.com</li>
+        <li>Google Forms</li>
+        <li>Google Sheets</li>
+        <li>Gmail</li>
+      </ul>
+
+      <div class="result" style="margin-top:2rem;">
+        <h3>The result</h3>
+        <p>I tested it with a real form submission: the row was picked up, the customer received the auto-reply, and the owner received the alert.</p>
+        <p>Next, I plan to add a follow-up message and a simple status column to track each inquiry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <h2>What I can automate for you</h2>
+      <div class="svc">
+        <div>
+          <h3>Lead capture</h3>
+          <p>Every form response goes straight into an organized sheet.</p>
+        </div>
+        <div>
+          <h3>Instant replies</h3>
+          <p>Customers get a friendly confirmation the moment they reach out.</p>
+        </div>
+        <div>
+          <h3>Owner alerts</h3>
+          <p>You get notified about each new inquiry, so nothing slips through.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS + EXPERIENCE -->
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <ul class="pills">
+        <li>Make.com</li>
+        <li>Workflow automation</li>
+        <li>Google Sheets</li>
+        <li>Google Forms</li>
+        <li>Gmail</li>
+        <li>Generative AI tools</li>
+        <li>Customer service</li>
+      </ul>
+
+      <div class="exp">
+        <h2>Experience</h2>
+        <!-- EDIT: add company names and dates from your CV -->
+        <div class="exp-item">
+          <h3>AI Generative Specialist</h3>
+          <p>Create content and visuals with generative AI tools.</p>
+        </div>
+        <div class="exp-item">
+          <h3>Customer service</h3>
+          <p>Handled customer questions and requests, and learned how to keep people happy and informed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2>Let's work together</h2>
+      <p>I'm open to remote roles in AI and automation. The best way to reach me is by email.</p>
+      <div class="btn-row">
+        <a class="btn btn-main" href="mailto:roselle.gerosaga01@gmail.com">Email me</a>
+        <!-- CV: upload your CV to the repository as cv.pdf -->
+        <a class="btn btn-soft" href="cv.pdf" target="_blank" rel="noopener">Download my CV</a>
+        <!-- LINKEDIN: replace the address below with your real LinkedIn profile link -->
+        <a class="btn btn-soft" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn profile</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Roselle Rivera Gerosaga, 2026</div>
+</footer>
+
+</body>
+</html>
